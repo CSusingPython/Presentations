@@ -1,0 +1,54 @@
+# 1. Built-in sequences
+## 1. Container sequences
+* list, tuple and collections.deque can hold items of different types
+## 2. Flat sequences
+* str, bytes, bytearray, memoryview and array.array hold items of one type.
+* example
+
+```
+board = [['_'] * 3 for i in range(3)]
+board[1][2] = 'X'
+board
+
+#The outer list is made of three references to the same inner list. While it is unchanged, all seems right
+weird_board = [['_'] * 3] * 3
+weird_board[1][2] = 'O'
+weird_board
+```
+
+# 2. Named tuples
+```
+from collections import namedtuple
+City = namedtuple('City', 'name country population coordinates')
+tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
+tokyo
+```
+
+# 3. Ordered dictionary
+* collections.OrderedDict: maintains keys in insertion order, allowing iteration over items in a predictable order. 
+  The popitem method of an OrderedDict pops the first item by default, 
+  but if called as my_odict.popitem(last=True), it pops the last item added
+* Example
+```
+import collections
+d = collections.OrderedDict() 
+# d= {}
+d['a'] = 'A'
+d['b'] = 'B'
+d['c'] = 'C'
+d['d'] = 'D'
+d['e'] = 'E'
+
+for k, v in d.items():
+    print k, v
+```
+
+# 2: dicts have significant memory overhead
+Because a dict uses a hash table internally, and hash tables must be sparse to work, they
+are not space efficient. For example, if you are handling a large quantity of records it
+makes sense to store them in a list of tuples or named tuples instead of using a list of
+dictionaries in JSON style, with one dict per record. Replacing dicts with tuples reduces
+the memory usage in two ways: by removing the overhead of one hash table per record
+and by not storing the field names again with each record.
+
+# 4. Comprehensions
