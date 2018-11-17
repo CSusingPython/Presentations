@@ -1,0 +1,25 @@
+
+
+# 실질인자(actual parameter/argement) vs 형식인자((formal)parameter)
+
+1. 형식인자 : 아래 x와 같이 함수 점의의 요소
+function(x):
+print(x+5)
+
+2. 실질인자 : 아래 5와 같이 실제 입력 변수
+function(5)
+>>10
+
+
+# 값으로 호출(by value) vs 참조로 호출(by referece)
+
+pass by value : 형식 인자에 새로운 값이 할당되어도 실질 인자 변수에 영향 없음
+pass by reference : 함수를 호출한 쪽에서도 실지 인자 변수의 값이 변함
+(해석) pass by value 방식에서 pass by reference처럼 사용하려면, callee 의 결과값을 return 으로 호출하도록 해야함
+
+# 참조
+First and foremost, the "pass by value vs. pass by reference" distinction as defined in the CS theory is now obsolete because the technique originally defined as "pass by reference" has since fallen out of favor and is seldom used now.
+Now, the authentic definition is:
+When a parameter is passed by reference, the caller and the callee use the same variable for the parameter. If the callee modifies the parameter variable, the effect is visible to the caller's variable.
+When a parameter is passed by value, the caller and callee have two independent variables with the same value. If the callee modifies the parameter variable, the effect is not visible to the caller.
+Now, in modern languages, variables tend to be of "reference types" (another concept invented later than "pass by reference" and inspired by it), i.e. the actual object data is stored separately somewhere (usually, on the heap), and only "references" to it are ever held in variables and passed as parameters.
