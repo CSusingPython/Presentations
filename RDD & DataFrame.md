@@ -36,7 +36,3 @@
 * Near real-time processing
 * Graph processing, machine learning
 * Joining datasets. 
-
-
-## RDD and spark data frame
-* spark data frame is 
