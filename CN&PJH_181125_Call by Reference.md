@@ -9,27 +9,28 @@ Python은 객체의 메모리 주소가 함수로 전달되는 방식을 사용�
  다음의 예를 들어보자 
  
 # 예문 
-def tf(jumo):
-    a.append(1)
-    print(jumo)
-  
-a = [0]
-tf(a)
-print(a)
+
+	def tf(jumo):
+	    a.append(1)
+	    print(jumo)
+	    
+	a = [0]
+	tf(a)
+	print(a)
 
 [0,1]을 출력
 
 위와 같이 a라는 리스트를 만든 후 이를 함수 tf 에 인자로 넘겨주면 (메모리 주소를 넘겨주면) jumo와 a는 같은 메모리 주소를 갖게 된다. 따라서 두 print문은 모두 [0, 1]을 출력하게 된다.
 
 # 예문 2
-def tf(jumo):
-    a.append(1)   
-    jumo = [2,3]  
-    print(jumo)
+	def tf(jumo):
+	    a.append(1)   
+	    jumo = [2,3]  
+	    print(jumo)
 
-a = [0]
-tf(a)
-print(a)
+	a = [0]
+	tf(a)
+	print(a)
 
 [2,3]을 출력
 
@@ -42,13 +43,13 @@ print(a)
   < 1 > return 값 이용하기
   
 # vartest_return.py
-a = 1 
-def vartest(a): 
-    a = a + 1 
-    return a
+	a = 1 
+	def vartest(a): 
+	    a = a + 1 
+	    return a
 
-a = vartest(a) 
-print(a)
+	a = vartest(a) 
+	print(a)
 
 출처) wikidocs "점프 투 파이썬"
 
@@ -57,13 +58,13 @@ vartest 함수는 입력으로 들어온 값에 1을 더한값을 돌려준다. 
    < 2 > global 명령어 이용하기
    
 # vartest_global.py
-a = 1 
-def vartest(): 
-    global a 
-    a = a+1
+	a = 1 
+	def vartest(): 
+	    global a 
+	    a = a+1
 
-vartest() 
-print(a)
+	vartest() 
+	print(a)
 
 출처) wikidocs "점프 투 파이썬"
 
