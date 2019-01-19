@@ -48,7 +48,7 @@ class Menu:
 
 -------------------------------------------
 ```python
-from graphics import *
+from graphics import  *
 from random import randrage
 from button import Button
 from monte_menu import Menu
